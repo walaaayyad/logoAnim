@@ -7,22 +7,19 @@
     <title>SVG Animation</title>
 </head>
 <style>
-    .container {
-        width: 100%;
-		height: 50vh;
-    }
+
 /*--------------- Whole Word ---------------*/
     .whole_svg {
-        width: 60vw;
+        width: 96vw;
+        height: 90vh;
         position: relative;
-        left: 30%;
-        right: 30%;
-        margin-left: -30vw;
-        margin-right: -30vw;
+        top: 0;
+        left: 0;
+        padding: 10px 20px;
+        margin: 10px 2px;
         min-height: 100%;
-        padding-left: 20vw;
-        padding-right: 20vw;
-        animation: bg-color 9s ease-in-out infinite 0s normal forwards;
+        border: 2px solid #000;
+        animation: bg-color 6s ease-in-out infinite 0s normal forwards;
     }
     @keyframes bg-color {
         0%,20%,40%,60% {
@@ -57,18 +54,19 @@
     .letter_o,
     .letter_k_copy,
     .letter_d_copy {
-        transform: translate(-10%,0);
-        animation: moveRight 9s ease-in-out infinite 0.3s normal forwards;
+        transform: translate(-2%,0);
+        animation: moveRight 6s ease-in-out infinite 0.3s normal forwards;
         fill: #03b5b0;
         transition: all 5s ease;
     }
     .letter_k_copy,
     .letter_d_copy {
-        opacity: 0;
+        fill: none;
     } 
     @keyframes moveRight {
         0% {
             transform-origin: center center;
+            transform: translate(-2%,0) translateX(0%);
         }
         25% {
             transform-origin: center center;
@@ -92,20 +90,18 @@
         90% {
             fill: #abcd51;
         }
-        95% {
+        93% {
             fill: #abcd51;
-            opacity: 1;
         }
-        100% {
+        95%,98%,100% {
             fill: #03b5b0;
-            opacity: 1;
             transform: translateX(0%);
         }
     }
     /*-------------- Letter D Logo ------------*/
     .letter_d{
         transform: translate(-10%,0);
-        animation: logo_d 9s ease-in-out infinite  0s  normal forwards;
+        animation: logo_d 6s ease-in-out infinite  0s  normal forwards;
         fill: #03b5b0;
         transition: all 5s ease;
     }
@@ -134,25 +130,24 @@
         }
     }
 
-    /*-------------- Letter K Logo ----------------*/
+    /*-------------- Letter K Logo [< V]----------------*/
     .letter_k_2 {
-        transform: translate(-10%,0);
-        animation: logo_v 9s ease-in-out infinite  0s  normal forwards;
+        animation: logo_v 6s ease-in-out infinite  0s  normal forwards;
         fill: #03b5b0;
         transition: all 5s ease;
     }
     @keyframes logo_v {
         0% { 
-            transform: translate(-10%,0); 
+            transform: translate(-2px,0);
             transform-origin: center center;
         } 
         25% { 
             transform-origin: bottom right;
-            transform: translate(-46%,-65%) rotate(-90deg) scale(0.9);
+            transform: translate(-47%,-30%) rotate(-90deg) scale(0.8);
         } 
         50% {
             transform-origin: bottom right;
-            transform: translate(-45%,-70%) rotate(-90deg) scale(0.8) translateX(28%);
+            transform: translate(-47%,-75%) rotate(-90deg) scale(0.7) translateX(28%);
         }
         75% {
             fill: #03b5b0;
@@ -169,8 +164,7 @@
 </style>
 <body>
 <div>
-    <div class="container">
-        <svg id="whole_svg" class = "whole_svg" width="169" height="20" viewBox="0 0 169 20" xmlns="http://www.w3.org/2000/svg">
+        <svg class = "whole_svg" width="169" height="20" fill="none" viewBox="0 0 169 20" xmlns="http://www.w3.org/2000/svg">
             <path class="letter_e" d="M57.9347 19.4505C56.696 19.7947 55.2277 19.9638 53.5358 19.9638C51.288 19.9638 49.5055 19.3418 48.1883 18.0918C46.871 16.8418 46.2124 15.1751 46.2124 13.0918C46.2124 11.715 46.4964 10.5012 47.0704 9.45047C47.6445 8.41786 48.3877 7.6268 49.3061 7.0652C50.2246 6.50361 51.2336 6.22583 52.3334 6.22583C54.3032 6.22583 55.8319 6.83573 56.9075 8.0495C57.983 9.26327 58.5208 10.9481 58.5208 13.1038V14.378H49.5478C49.7291 16.3708 51.2095 17.3671 53.9829 17.3671C55.7231 17.3671 57.0404 17.2524 57.9347 17.0229V19.4625V19.4505ZM52.3998 8.79829C51.6445 8.79829 51.004 9.10023 50.4723 9.71013C49.9466 10.32 49.6566 11.099 49.6143 12.0652H55.2518C55.2518 11.0326 54.9981 10.2355 54.4965 9.66182C53.989 9.08815 53.2941 8.80433 52.3998 8.80433V8.79829Z" />
             <path class="letter_n" d="M62.6477 6.42511V7.56038C64.2067 6.80554 65.7294 6.42511 67.2218 6.42511C68.6176 6.42511 69.675 6.73308 70.3881 7.35506C70.9862 7.88042 71.4032 8.52656 71.6449 9.28139C71.8866 10.0362 72.0074 11.0447 72.0074 12.3068V19.6256H68.7385V11.8961C68.7385 11.0507 68.5391 10.3925 68.1342 9.92149C67.7354 9.45047 67.1433 9.21497 66.3638 9.21497C65.5843 9.21497 64.4967 9.45651 63.1674 9.93356V19.6256H59.8984V6.42511H62.6477Z" />
             <path class="letter_t" d="M82.7266 16.5278V19.0036L80.9018 19.4505C80.3519 19.5411 79.9289 19.5894 79.6268 19.5894C77.9047 19.5894 76.6842 19.2331 75.9651 18.5266C75.2461 17.82 74.8835 16.6606 74.8835 15.0543V9.00362H72.6841V6.42512H74.8835V2.64493H78.1827V6.42512H82.7568V9.00362H78.1827V14.9819C78.1827 16.2681 78.9078 16.9082 80.3519 16.9082C80.9259 16.9082 81.7175 16.7814 82.7266 16.5278Z" />
@@ -188,7 +182,7 @@
             <path class="letter_d" d="M28.091 1.09903H34.4839C36.9371 1.09903 38.9432 1.53381 40.5021 2.40338C43.2272 4.02777 44.5928 6.55193 44.5928 9.96377C44.5928 12.4396 44.0127 14.4988 42.8586 16.1473C41.6985 17.7959 40.0006 18.9553 37.7528 19.6196C37.0881 19.7826 36.4114 19.8853 35.7226 19.9275C35.0337 19.9758 34.0609 19.994 32.798 19.994H28.085V1.09903H28.091ZM31.4627 4.12439V16.9444H33.6621C35.4748 16.9444 36.9008 16.721 37.9401 16.2742C38.9855 15.8273 39.777 15.0543 40.3269 13.9553C40.5807 13.587 40.7801 13.0978 40.9311 12.4758C41.0822 11.8539 41.1547 11.1715 41.1547 10.4167C41.1547 8.35748 40.5927 6.79347 39.4688 5.72463C38.345 4.66183 36.7075 4.12439 34.5503 4.12439H31.4566H31.4627Z" />
             <path class="letter_d_copy" d="M28.091 1.09903H34.4839C36.9371 1.09903 38.9432 1.53381 40.5021 2.40338C43.2272 4.02777 44.5928 6.55193 44.5928 9.96377C44.5928 12.4396 44.0127 14.4988 42.8586 16.1473C41.6985 17.7959 40.0006 18.9553 37.7528 19.6196C37.0881 19.7826 36.4114 19.8853 35.7226 19.9275C35.0337 19.9758 34.0609 19.994 32.798 19.994H28.085V1.09903H28.091ZM31.4627 4.12439V16.9444H33.6621C35.4748 16.9444 36.9008 16.721 37.9401 16.2742C38.9855 15.8273 39.777 15.0543 40.3269 13.9553C40.5807 13.587 40.7801 13.0978 40.9311 12.4758C41.0822 11.8539 41.1547 11.1715 41.1547 10.4167C41.1547 8.35748 40.5927 6.79347 39.4688 5.72463C38.345 4.66183 36.7075 4.12439 34.5503 4.12439H31.4566H31.4627Z" />
         </svg>
-    </div>
+
 </div>
 
 </body>
