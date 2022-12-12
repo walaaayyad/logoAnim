@@ -8,30 +8,30 @@
 </head>
 <style>
 
-/*--------------- Whole Word ---------------*/
+/*--------------------------- The Whole Word ---------------------------*/
     .whole_svg {
         width: 96vw;
-        height: 90vh;
+        height: 100vh;
         position: relative;
         top: 0;
         left: 0;
         padding: 10px 20px;
         margin: 10px 2px;
-        min-height: 100%;
-        border: 2px solid #000;
-        animation: bg-color 6s ease-in-out infinite 0s normal forwards;
+        margin-top: -13%;
+        animation: bg-color 7s ease-in-out infinite 0s normal forwards;
     }
+    /*---- Animation to change the colors of backegroud ---*/
     @keyframes bg-color {
-        0%,20%,40%,60% {
+        0%,70% {
             background-color: #ffffff;
         }
-        70% {
+        75% {
             background-color: #accd51;
         }
-        75% {
+        85% {
             background-color: #fdef00;
         }
-        80% {
+        90% {
             background-color: #03b5b0;
         }
         100% {
@@ -39,7 +39,7 @@
         }
     }
 
-/*----------- SVG Letters ---------*/
+/*-------------------------- SVG Letters ------------------------*/
     .letter_e,
     .letter_n,
     .letter_t,
@@ -55,14 +55,16 @@
     .letter_k_copy,
     .letter_d_copy {
         transform: translate(-2%,0);
-        animation: moveRight 6s ease-in-out infinite 0.3s normal forwards;
+        animation: moveRight 7s ease-in-out infinite 0.3s normal forwards;
         fill: #03b5b0;
         transition: all 5s ease;
     }
     .letter_k_copy,
     .letter_d_copy {
         fill: none;
+        z-index: 100;
     } 
+    /*---- Animation to move the whole word forward and backward ----*/
     @keyframes moveRight {
         0% {
             transform-origin: center center;
@@ -82,31 +84,26 @@
             fill: #03b5b0;
         }
         80% {
+            fill: #03b5b0;
+        }
+        85%,93% {
             fill: #abcd51;
         }
-        85% {
-            fill: #abcd51;
-        }
-        90% {
-            fill: #abcd51;
-        }
-        93% {
-            fill: #abcd51;
-        }
-        95%,98%,100% {
+        95%,100% {
             fill: #03b5b0;
             transform: translateX(0%);
         }
     }
-    /*-------------- Letter D Logo ------------*/
+    /*----------------------- Letter D Logo ---------------------*/
     .letter_d{
         transform: translate(-10%,0);
-        animation: logo_d 6s ease-in-out infinite  0s  normal forwards;
+        animation: logo_d 7s ease-in-out infinite  0s  normal forwards;
         fill: #03b5b0;
         transition: all 5s ease;
     }
+    /*---- Animation to rotate letter D then drop it down then move it up and go to the left side ----*/
     @keyframes logo_d {
-        0% { 
+        0%, 10% { 
             transform: rotate(360deg); 
             transform-origin: center center;
         } 
@@ -118,26 +115,27 @@
             transform-origin: center center;
             transform: rotate(271deg) translateX(28%);
         } 
-        75% {
+        75%,85% {
             fill: #03b5b0;
             transform-origin: center center;
             transform: rotate(271deg) translateX(28%) translateY(-75px);
         }
-        80%,90%,100% {
+        95%,100% {
             fill: #abcd51;
             transform-origin: center center;
             transform: rotate(271deg) translateX(28%) translateY(-75px);
         }
     }
 
-    /*-------------- Letter K Logo [< V]----------------*/
+    /*------------------------ Letter K Logo -----------------------*/
     .letter_k_2 {
-        animation: logo_v 6s ease-in-out infinite  0s  normal forwards;
+        animation: logo_v 7s ease-in-out infinite  0s  normal forwards;
         fill: #03b5b0;
         transition: all 5s ease;
     }
+    /*---- Animation to rotate part of letter K then drop it down then move it up and go to the left side ----*/
     @keyframes logo_v {
-        0% { 
+        0%,5% { 
             transform: translate(-2px,0);
             transform-origin: center center;
         } 
@@ -149,12 +147,12 @@
             transform-origin: bottom right;
             transform: translate(-47%,-75%) rotate(-90deg) scale(0.7) translateX(28%);
         }
-        75% {
+        75%,85% {
             fill: #03b5b0;
             transform-origin: bottom right;
             transform: translate(-60%,-80%) rotate(-90deg) scale(0.7) translateX(28%) translateY(-75px);
         }
-        80%,90%,100% {
+        95%,100% {
             fill: #abcd51;
             transform-origin: bottom right;
             transform: translate(-60%,-80%) rotate(-90deg) scale(0.7) translateX(28%) translateY(-75px);
